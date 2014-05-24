@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bond Affordability Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="center.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js"></script>
+<script src="jquery.mobile-1.0.min.js"></script>
+<script src="affordability.js"></script>
+<script src="phonegap.js"></script>
+</head>
+<body>
+<div id="page" data-role="page" data-theme="c">
+  <div data-role="header" data-theme="b"> <a href="index.html" data-role="button">Back</a>
+    <h1>Bond Affordability</h1>
+  </div>
+  <div data-role="content">
+    <form>
+      <table data-role="table" id="table-reflow" class="ui-responsive table-stroke">
+        <tbody>
+          <tr>
+            <th colspan=2>Income</th>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Gross Income:</td>
+            <td><input name="nettincome" id="nettincome" value="" onkeyup="reCalc();" type="text" /></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th colspan=2>Expenses</th>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Total expenses:</td>
+            <td><input  name="expenses" id="expenses" value="" onkeyup="reCalc();" type="text" /></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Interest Rate %:</td>
+            <td><span class="rightal">
+              <select name="rate" id="rate" onchange="reCalc();">
+                <option value="8.5">8.5</option>
+                <option value="9.0" selected="selected">9.0</option>
+                <option value="9.5">9.5</option>
+                <option value="10.0">10.0</option>
+                <option value="10.5">10.5</option>
+                <option value="11.0">11.0</option>
+                <option value="11.5">11.5</option>
+                <option value="12.0">12.0</option>
+                <option value="12.5">12.5</option>
+                <option value="13.0">13.0</option>
+                <option value="13.5">13.5</option>
+                <option value="14.0">14.0</option>
+              </select>
+              </span></td>
+          </tr>
+        </tbody>
+      </table>
+      <table data-role="table" id="table-reflow" class="ui-responsive table-stroke">
+        <tbody>
+          <tr>
+            <td>You qualify for: <span id="qualify">R 0.00</span> @ <span id="selectedrate">9.0</span>%<br /></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th>Repayment:</th>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td><span class="textg">Over 15 years</span> = <span id="15yrs">R 0.00 pm</span><br />
+              <span class="textg">Over 20 years</span> = <span id="20yrs">R 0.00 pm</span><br />
+              <span class="textg">Over 25 years</span> = <span id="25yrs">R 0.00 pm</span><br />
+              <span class="textg">Over 30 years</span> = <span id="30yrs">R 0.00 pm</span><br /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+	<div data-role="footer" data-theme="b">
+    <h4> © Eezi Software <br>
+      <small>eezisoftware.co.za</small></h4>
+    <div class="center-wrapper">
+      <div data-role="button"> <a href="disclaimer.html" data-ajax="false">
+        <p class="ex">Disclaimer</p></a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
